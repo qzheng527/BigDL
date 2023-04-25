@@ -18,6 +18,8 @@ spec:
       mountPath: /var/run/aesmd
     - name: data-exchange
       mountPath: /opt/occlum_spark/data
+    - name: occlum-conf-volume
+      mountPath: /opt/occlum_conf
     securityContext:
       privileged: true
     env:
@@ -61,3 +63,6 @@ spec:
   - name: data-exchange
     hostPath:
       path: /tmp
+  - name: occlum-conf-volume
+    configMap:
+      name: occlum-build-conf
