@@ -18,8 +18,8 @@ spec:
       mountPath: /var/run/aesmd
     - name: data-exchange
       mountPath: /opt/occlum_spark/data
-    - name: occlum-conf-volume
-      mountPath: /opt/occlum_conf
+    # - name: occlum-conf-volume
+    #   mountPath: /opt/occlum_conf
     securityContext:
       privileged: true
     env:
@@ -34,9 +34,9 @@ spec:
     - name: SGX_KERNEL_HEAP
       value: "1GB"
     - name: ATTESTATION
-      value: false
+      value: true
     - name: PCCS_URL
-      value: "https://PCCS_IP:PCCS_PORT"
+      value: "https://sgx-dcap-server.cn-shanghai.aliyuncs.com"
     - name: ATTESTATION_URL
       value: "ESHM_IP:EHSM_PORT"
     - name: APP_ID
@@ -63,6 +63,6 @@ spec:
   - name: data-exchange
     hostPath:
       path: /tmp
-  - name: occlum-conf-volume
-    configMap:
-      name: occlum-build-conf
+  # - name: occlum-conf-volume
+  #   configMap:
+  #     name: occlum-build-conf

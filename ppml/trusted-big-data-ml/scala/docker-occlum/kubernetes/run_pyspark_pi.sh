@@ -6,7 +6,7 @@ ${SPARK_HOME}/bin/spark-submit \
     --name pyspark-pi \
     --conf spark.executor.instances=1 \
     --conf spark.rpc.netty.dispatcher.numThreads=32 \
-    --conf spark.kubernetes.container.image=sevenzheng/bigdl-ppml-trusted-big-data-ml-scala-occlum:2.3.0-SNAPSHOT-aecs \
+    --conf spark.kubernetes.container.image=sevenzheng/bigdl-ppml-trusted-big-data-ml-scala-occlum-production:2.3.0-aecs-build \
     --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
     --conf spark.kubernetes.executor.deleteOnTermination=false \
     --conf spark.kubernetes.driver.podTemplateFile=./driver.yaml \
